@@ -472,7 +472,7 @@ app.delete(
 
 
 app.get("/", (req, res) => {
-  res.send("Welcome to CRM Tool");
+  res.send("Welcome to potland API");
 });
 
 app.listen(process.env.PORT || 3000, () => {
