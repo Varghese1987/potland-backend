@@ -18,14 +18,14 @@ app.use(cors());
 //production URLs:
 const dbUrl =
   "mongodb+srv://varghese123:varghese123@cluster0-yqune.mongodb.net/<dbname>?retryWrites=true&w=majority";
-// const serverURL = "https://esv-crmtool.herokuapp.com";
-// const frontEndURL = "https://esv-crm-tool.netlify.app/#/";
+const serverURL = "https://potland.herokuapp.com";
+const frontEndURL = "https://pot-land.netlify.app/#/";
 
 // development URLs:
 // const dbUrl = "mongodb://localhost:27017";
-const serverURL = "http://localhost:3000";
+// const serverURL = "http://localhost:3000";
 // const dbUrl = "mongodb://13.127.169.233:27017/sample";
-const frontEndURL = "http://localhost:4200/#/";
+// const frontEndURL = "http://localhost:4200/#/";
 
 // ******************Middlewares to restrict the route access******************
 
