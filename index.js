@@ -418,10 +418,7 @@ app.post(
   }
 );
 
-app.get(
-  "/productList",
-  [authenticate, permit("admin", "manager", "employeeLevel-2")],
-  (req, res) => {
+app.get("/productList",(req, res) => {
     mongoClient.connect(dbUrl, (err, client) => {
       if (err) throw err;
       let db = client.db("potLand");
@@ -469,6 +466,13 @@ app.delete(
     });
   }
 );
+
+var reqTimer = setTimeout(function wakeUp() {
+  request("https://potland.herokuapp.com", function() {
+     console.log("WAKE UP DYNO");
+  });
+  return reqTimer = setTimeout(wakeUp, 1200000);
+}, 1200000);
 
 
 app.get("/", (req, res) => {
