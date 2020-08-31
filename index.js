@@ -18,12 +18,12 @@ app.use(cors());
 //production URLs:
 const dbUrl =
   "mongodb+srv://varghese123:varghese123@cluster0-yqune.mongodb.net/<dbname>?retryWrites=true&w=majority";
-const serverURL = "https://potland.herokuapp.com";
+// const serverURL = "https://potland.herokuapp.com";
 const frontEndURL = "https://pot-land.netlify.app/#/";
 
 // development URLs:
 // const dbUrl = "mongodb://localhost:27017";
-// const serverURL = "http://localhost:3000";
+const serverURL = "http://localhost:3000";
 // const dbUrl = "mongodb://13.127.169.233:27017/sample";
 // const frontEndURL = "http://localhost:4200/#/";
 
@@ -288,6 +288,7 @@ app.post("/login", (req, res) => {
                       token: token,
                       userId: data._id,
                       role: data.role,
+                      name: data.fName
                     });
                   }
                 }
@@ -467,12 +468,13 @@ app.delete(
   }
 );
 
-var reqTimer = setTimeout(function wakeUp() {
-  request("https://potland.herokuapp.com", function() {
-     console.log("WAKE UP DYNO");
-  });
-  return reqTimer = setTimeout(wakeUp, 1200000);
-}, 1200000);
+
+// var reqTimer = setTimeout(function wakeUp() {
+//   request(`${serverURL}`, function() {
+//      console.log("WAKE UP DYNO");
+//   });
+//   return reqTimer = setTimeout(wakeUp, 1200000);
+// }, 1200000);
 
 
 app.get("/", (req, res) => {
